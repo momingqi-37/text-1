@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
 router.get('/', function(req, res, next) {
   res.render('register');
 });
-
+connection.connect();
 router.post('/', (req, res) =>{
  //获取前端信息，保存到session，判断
 //  req.session.uname = req.body.uname ;
@@ -43,6 +43,6 @@ res.redirect('/');
   // }
 )
 //添加
- 
+ connection.end();
 });
 module.exports = router;
