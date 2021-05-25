@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
 router.get('/', function(req, res, next) {
   res.render('register');
 });
-connection.connect();
+
 router.post('/', (req, res) =>{
  //获取前端信息，保存到session，判断
 //  req.session.uname = req.body.uname ;
@@ -33,16 +33,17 @@ connection.query(repeaded,(err,rows1)=>{
 ];
 var mysqlQuery ='INSERT INTO tab_creat(name,possword,type) values(?,?,1)'
 connection.query(mysqlQuery,mysqlparams,(err,rows)=>{
-  if(err) throw err;
-    console.log(rows);
+if (err)
+{console.log('[query]-:'+err)}
+   else res.redirect('/');
 });
-res.redirect('/');
+
  } 
   // else{
   //   res.send(console.log("用户名重复"));//用户名重复？？
   // }
 )
 //添加
- connection.end();
+ 
 });
 module.exports = router;

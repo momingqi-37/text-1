@@ -19,7 +19,7 @@ var connection = mysql.createConnection({
 //     console.log()
 // });
 
-var sql ='SELECT name,possword,type from tab_creat';
+var sql ='SELECT * from tab_creat';
 connection.query(sql,function(error,results,fields){
     
     if(error){
@@ -35,4 +35,5 @@ connection.query(sql,function(error,results,fields){
 });
 
 
-module.exports = router;
+
+module.exports = router;                          

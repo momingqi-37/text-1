@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 
+
 var logger = require('morgan');
 var ejs =require('ejs');
 var mysql =require('mysql');
@@ -14,6 +15,8 @@ var new2Router =require('./routes/new2');
 var new3Router =require('./routes/new3');
 var new4Router =require('./routes/new4');
 var new5Router =require('./routes/new5');
+var addRouter =require('./routes/add')
+
 var daleteRouter =require('./routes/dalete');
 var session = require('express-session');
 
@@ -43,6 +46,7 @@ app.use('/new2',new2Router);
 app.use('/new3',new3Router);
 app.use('/new4',new4Router);
 app.use('/new5',new5Router);//后台
+app.use('/add',addRouter);//增加
 app.use('/dalete',daleteRouter);//删除
 
 // catch 404 and forward to error handler

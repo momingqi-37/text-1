@@ -17,28 +17,33 @@
     <table>
         <thead>
         <tr>
-            <td colspan="4"></td>
+            <td colspan="5"></td>
         </tr>
         <tr>
+            <td>编号<span class="upBtn"></span><span class="downBtn"></span></td>
             <td>姓名<span class="upBtn"></span><span class="downBtn"></span></td>
             <td>明码<span class="upBtn"></span><span class="downBtn"></span></td>
             <td>身份<span class="upBtn"></span><span class="downBtn"></span></td>
             <td>操作<span class="upBtn"></span><span class="downBtn"></span></td>
         </tr>
+
         </thead>
         <tbody>
 			<% data.forEach((o,i) =>{ %>
 			<tr>
+                <td><%=o.id%></td>
 				<td><%=o.name%></td>
 				<td><%=o.possword%></td>
 				<td><%=o.type%></td>
                 <td><input  type="button" value="删除" /><input type="button" value="修改" /></td>
 			</tr>
 			<% }) %>
+            <input type="button" onclick=add() value="新增">
 		</tbody> 
     </table>
     <div>
         <p>现上线++用户</p>
     </div>
+    <script src="/javascripts/5html.js"></script>
 </body>
 </html>

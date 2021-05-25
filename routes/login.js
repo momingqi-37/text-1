@@ -23,14 +23,14 @@ router.post('/login', (req, res) =>{
 // } 
  let md5 = crypto.createHash("md5");
 let newPas = md5.update(req.body.password).digest("hex");//加密
-var mysqlQuery ="select name,possword from tab_creat where name='"+req.body.name+"'and possword ='"+newPas+"'";
+var mysqlQuery ="select name,possword from tab_creat where name='"+req.body.uname+"'and possword ='"+newPas+"'";
 connection.query(mysqlQuery,(err,rows)=>{
  
   if(err){
      throw err;
     }
-    else{
-      if(rows.length==0){
+  else{
+      if(rows=""){
     res.json('账号或密码错误，登陆失败')
      }
    else{
