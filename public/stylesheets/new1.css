@@ -1,0 +1,49 @@
+.title_{
+    text-align: center;
+    color: #000;
+    
+}
+body{
+    background-size: cover;
+}
+.head_ti{
+    /* 设置宽度高度背景颜色 */
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+    background: rgb(189, 181, 181);
+    position: fixed;
+    top: 0;
+    margin-bottom: 5px;
+}
+.head_ti ul{
+    width:auto;
+ list-style-type: none;
+white-space:nowrap;
+ padding: 0;
+ overflow: hidden;
+ margin-left: 5%;
+ 
+}
+.head_ti li{
+    float: left;/* 使li内容横向浮动，即横向摆列 */
+    margin-right: 2%;
+    position: relative;
+    overflow: hidden;
+}
+
+.head_ti li a{
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 3px;
+    overflow:hidden;
+    text-decoration: none; /*除下划线*/
+}
+.head_ti li a:hover{
+    /*鼠标选中*/
+    width: auto;
+    height: auto;
+    
+    background-color: #111;
+}

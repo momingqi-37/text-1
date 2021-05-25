@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/new5.css">
+</head>
+<body >
+    <div>
+        <h1>
+        后台维护
+         </h1>
+         <p>(对用户数据进行监控的后台 type=1为用户，type=0为管理员)</p>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td>姓名<span class="upBtn"></span><span class="downBtn"></span></td>
+            <td>明码<span class="upBtn"></span><span class="downBtn"></span></td>
+            <td>身份<span class="upBtn"></span><span class="downBtn"></span></td>
+            <td>操作<span class="upBtn"></span><span class="downBtn"></span></td>
+        </tr>
+        </thead>
+        <tbody>
+			<% data.forEach((o,i) =>{ %>
+			<tr>
+				<td><%=o.name%></td>
+				<td><%=o.possword%></td>
+				<td><%=o.type%></td>
+                <td><input href="/dalete" type="button" value="删除" /><input type="button" value="修改" /></td>
+			</tr>
+			<% }) %>
+		</tbody> 
+    </table>
+    <div>
+        <p>现上线++用户</p>
+    </div>
+</body>
+</html>

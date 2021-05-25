@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
+</head>
+
+<body background="/images/2.jpg" width="100%"height="100%">
+    <div class="big_div">
+        <div class="right_div">
+            <form action="/register" method="POST" onsubmit="return check(this)">
+                <h2 style="text-align: center;">注册表</h2>
+
+                <label>
+                    <p>用户名：<input type="text" name="uname" placeholder="用户名长度为2~10位字符"></p>
+                </label>
+                <label>
+                    <p>密码：<input type="password" name="password" placeholder="请输入密码"></p>
+                </label>
+                <label>
+                    <p> 确认密码：<input type="password" name="repassword" placeholder="请确认密码"></p>
+                </label>
+                <label>
+                    <p> 别名：<input type="text" name="rename" placeholder="请输入别名，且只能为中文"></p>
+                </label>
+                <label>
+                    <p>手机号码：<input type="text" name="phonenum" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                            onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="只能是数字，且长度为11"></p>
+                </label>
+                <label>
+                    <p>邮箱：<input type="text" name="mail" placeholder="请输入邮箱，且长度为4~16"></p>
+                </label>
+                <label>
+                    <p> 性别：<select name="sex">
+                            <option> </option>
+                            <option> 男</option>
+                            <option>女 </option>
+                        </select>
+                    </p>
+                </label>
+                
+                <label>
+                    <p> 所属班级：
+                        <select name="classname">
+                            <option> </option>
+                            <option>01班</option>
+                            <option>02班</option>
+                            <option>03班</option>
+                            <option>04班</option>
+                            <option>其他</option>
+                        </select>
+                    </p>
+                </label>
+                <label>
+                    <p> 爱好：<select name="hobby">
+                            <option> </option>
+                            <option>篮球</option>
+                            <option>足球</option>
+                            <option>排球</option>
+                            <option>乒乓球</option>
+                            <option>其他</option>
+                        </select>
+                    </p>
+                </label>
+                <br>
+                <p class="last_p"><input type="submit" value="确认"></p>
+            </form>
+        </div>
+        <div class="float">
+            <div class="float1"><span>1</span></div>
+            <div class="float2"><span>2</span></div>
+            <div class="float3"><span>3</span></div>
+            <div class="float4"><span>4</span></div>
+            <div class="float5"><span>5</span></div>
+            <div class="float6"><span>6</span></div>
+            <div class="float7"><span>7</span></div>
+            <div class="float8"><span>8</span></div>
+            <div class="float9"><span>9</span></div>
+          
+        </div>
+    </div>
+    <script src="/javascripts/register.js"></script>
+</body>
+
+</html>
