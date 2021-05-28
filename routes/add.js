@@ -11,11 +11,12 @@ var connection = mysql.createConnection({
     password:'1234',
     database:'yyf',
 });
+connection.connect(); 
 router.get('/',(req,res)=>{
     res.render('add.html');
 });
 
-router.post('/add',(req,res)=>{
+router.post('/a',(req,res)=>{
     let md5 = crypto.createHash("md5");
     let newPas = md5.update(req.body.password).digest("hex");//加密
     mysql2=[
@@ -30,4 +31,5 @@ connection.query(sql,mysql2,(error,results,fields)=>{
 })
  res.redirect('/new5');
 });
+connection.end();
 module.exports = router;

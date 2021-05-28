@@ -7,12 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <from action="/add" method="POST" onsubmit="return check(this)">
-        <input type="text" name="name1" placeholder="用户名"/>
-    <input type="password" name="password" placeholder="密码"/>
-    <input type="text" name="name2" placeholder="身份"/>
-    <input type="submit">
+    <from action="/a" method="POST">
+        <input type="text" name="name1" placeholder="用户名" onsubmit="return print()" />
+    <input type="password" name="password" placeholder="密码" />
+    <input type="text" name="name2" placeholder="身份" />
+    <input type="submit" value="提交" />
     </from>
     
+    <script>
+    function print(from) {
+    // var a=document.getElementsByClassName("input_").value;
+    // alert(a);
+    let inputValue = Array.from(document.querySelectorAll('input')).map(i => i.value);
+    name1 = inputValue[0];         
+    password = inputValue[1];
+    name2 = inputValue[2];
+    return true;
+}
+    </script>
 </body>
 </html>
