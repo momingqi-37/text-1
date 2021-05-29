@@ -15,7 +15,7 @@ var new2Router =require('./routes/new2');
 var new3Router =require('./routes/new3');
 var new4Router =require('./routes/new4');
 var new5Router =require('./routes/new5');
-var addRouter =require('./routes/add')
+
 
 var daleteRouter =require('./routes/dalete');
 var session = require('express-session');
@@ -45,8 +45,7 @@ app.use('/new1',new1Router);
 app.use('/new2',new2Router);
 app.use('/new3',new3Router);
 app.use('/new4',new4Router);
-app.use('/new5',new5Router);//后台
-app.use('/add',addRouter);//增加
+app.use('/new5',new5Router);//后台//增加
 app.use('/dalete',daleteRouter);//删除
 
 // catch 404 and forward to error handler
@@ -59,7 +58,7 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  console.log(err);
   // render the error page
   res.status(err.status || 500);
   res.render('error');
