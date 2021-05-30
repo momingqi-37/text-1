@@ -19,20 +19,20 @@ var connection = mysql.createConnection({
 //     }
 //     console.log()
 // });
+router.get('/', (req, res, next) => {
     var sql = 'SELECT * from tab_creat';
     connection.query(sql, function (error, results, fields) {
 
         if (error) {
             console.log('[query]-:' + error);
         } else {
-            console.log(results);
-            router.get('/', (req, res, next) => {
+            console.log(results);           
                 res.render('5.html', {
                     data: results
-                });
-            })
+                });   
         }
     });
+});
 router.get('/add', (req, res) => {
     res.render('add');
 });
@@ -44,10 +44,10 @@ router.post('/add', (req, res) => {
         newPas,
         req.body.name2
     ]
-    var sql = 'INSERT INTO tab_creat(name,possword,type) vauls(?,?,?)';
+    var sql = 'INSERT INTO tab_creat(name,possword,type) values(?,?,?)';
     connection.query(sql, mysql2, (error, results) => {
-        if (error) { console.log('[query]-:' + err) };
-        console.log("add yes"+results);
+        if (error) throw error;
+        console.log(results);
     })
     res.redirect('/new5');
 })
