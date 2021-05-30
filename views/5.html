@@ -15,6 +15,7 @@
          <p>(对用户数据进行监控的后台 type=1为用户，type=0为管理员)</p>
     </div>
     <table>
+        
         <thead>
         <tr>
             <td colspan="5"></td>
@@ -29,13 +30,17 @@
 
         </thead>
         <tbody>
+            
 			<% data.forEach((o,i) =>{ %>
 			<tr>
                 <td><%=o.id%></td>
 				<td><%=o.name%></td>
 				<td><%=o.possword%></td>
 				<td><%=o.type%></td>
-                <td><input  type="button" value="删除" /><input type="button" value="修改" /></td>
+                <td>
+                    <input  type="button" class="upd" value="修改" data_id="<%=o.id%>" />
+                    <input type="button" class="del" value="删除" data_id="<%=o.id%>" />
+                </td>
 			</tr>
 			<% }) %>
             <input type="button" onclick=add() value="新增">
@@ -47,7 +52,17 @@
     <script>
      function add(){
       window.location.href="/new5/add";
-     }
+     };
+    Array.from(document.getElementsByClassName("upd")).forEach( i => {
+         i.onclick=function(){
+           window.location.href="/new5/update/"+this.getAttribute('data_id');
+         };
+     })
+     Array.from(document.getElementsByClassName("del")).forEach( i => {
+         i.onclick=function(){
+           window.location.href="/new5/detale/"+this.getAttribute('data_id');
+         };
+     })
     </script>
 </body>
 </html>

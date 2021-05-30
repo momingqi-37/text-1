@@ -50,6 +50,16 @@ router.post('/add', (req, res) => {
         console.log(results);
     })
     res.redirect('/new5');
-})
+});
+router.get('/detale/:id',(req,res)=>{
+    var dalete_ ="DELETE FROM tab_creat WHERE id =?"
+    connection.query(dalete_,[req.params.id],(error,results,fields)=>{
+        if(error)
+        return console.error(error.message);
+        console.log('Deleted Row(s):',results.affectedRows);
+        res.redirect('/new5');
+    })
+});//删除
+
 
 module.exports = router;

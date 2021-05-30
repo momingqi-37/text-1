@@ -17,7 +17,7 @@ var new4Router =require('./routes/new4');
 var new5Router =require('./routes/new5');
 
 
-var daleteRouter =require('./routes/dalete');
+
 var session = require('express-session');
 
 var app = express();
@@ -46,7 +46,7 @@ app.use('/new2',new2Router);
 app.use('/new3',new3Router);
 app.use('/new4',new4Router);
 app.use('/new5',new5Router);//后台//增加
-app.use('/dalete',daleteRouter);//删除
+//删除
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
