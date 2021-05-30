@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   
 </head>
 <body>
-    <form action="">
-        <input type="text" name="name1" placeholder="名字" />
-        <input type="password"name="password" placeholder="密码"/>
-        <input type="text" name="type" placeholder="身份"/>
+    <form action="/new5/update" method="POST" style="text-align: center;">
+        <div><h1>成员修改信息</h1></div>
+        <div>名字</div>
+        <input type="text" name="name1" value="<%=obj.name %>" placeholder="修改名"/>
+        <div>密码</div>
+        <input type="password"name="password" value="<%=obj.possword %>" placeholder="修订密码"/>
+        <div>身份</div>
+        <input type="text" name="type" value="<%=obj.type %>" placeholder="身份"/>
         <input type="submit">
     </form>
 </body>
