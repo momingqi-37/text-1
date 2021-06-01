@@ -82,6 +82,17 @@ router.post('/update',(req,res)=>{
            {return console.error(error.message)} ;
         console.log('Update Row(s):', results.affectedRows);
         res.redirect('/new5');
-    })
+    });
+});
+router.post('/cha1',(req,res)=>{
+  var mys = "select * from tab_creat where name = ?";
+  connection.query(mys,[req.body.cha],(err,results)=>{
+      if (err)
+      {return console.error(err.message)};
+      console.log(results);
+      res.render('5.html', {
+        data: results
+    });
+  })
 })
     module.exports = router;

@@ -37,9 +37,9 @@ router.post('/', (req, res) => {
       else res.redirect('/');
     });
   }
-    // else{
-    //   res.send(console.log("用户名重复"));//用户名重复？？
-    // }
   )
 });
+
+
+
 module.exports = router;
