@@ -7,6 +7,7 @@
     height: 30px;
     background: #fff;
     border-radius: 999px;
+    top:100px;
 }
 #preloader-2 span:nth-child(1){
     animation: cross-1 1.5s infinite linear;
@@ -29,5 +30,5 @@
     align-items: center;
     position: fixed;
     left: 158px;
-    top: 130px;
+    top: 190px;
 }
