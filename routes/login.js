@@ -33,7 +33,7 @@ router.post('/login', (req, res) => {
     else {
       console.log(rows);
       if (rows.length == 0) {
-        res.json('账号或密码错误，登陆失败')
+        res.json('账号或密码错误，登陆失败');
       }
       else {
         if (rows[0].type == '0') {

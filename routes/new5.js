@@ -76,8 +76,8 @@ router.get('/update/:id', (req, res) => {
 router.post('/update',(req,res)=>{
     let md5 = crypto.createHash("md5");
     let newPas = md5.update(req.body.password).digest("hex");//加密
-    var update_2="update tab_creat set name ='"+req.body.name1+"' and possword ='"+newPas+"' where id = ? ";
-    connection.query(update_2,[req.params.id],(error,results)=>{
+    var update_2="update tab_creat set name ='"+req.body.name1+"',possword ='"+newPas+"',type ='"+req.body.type+"' where id = '"+req.body.id+"' ";
+    connection.query(update_2,(error,results)=>{
         if (error)
            {return console.error(error.message)} ;
         console.log('Update Row(s):', results.affectedRows);
