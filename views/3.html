@@ -79,7 +79,7 @@ http://www.templatemo.com/tm-511-journey
                         </div> <!-- row -->
                         <div class="row tm-banner-row" id="tm-section-search">
 
-                            <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                            <form action="/new3" method="POST" class="tm-search-form tm-section-pad-2">
                                 <div class="form-row tm-search-form-row">                                
                                     <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
                                         <label for="inputCity">Choose Your Destination</label>
@@ -212,12 +212,15 @@ http://www.templatemo.com/tm-511-journey
             </div>        
             <div class="tm-container-outer" id="tm-section-3">
                 <ul class="nav nav-pills tm-tabs-links">
-                    <li class="tm-tab-link-li">
+                    
+                        <li class="tm-tab-link-li">
                         <a href="#1a" data-toggle="tab" class="tm-tab-link">
                             <img src="/images/north-america.png" alt="Image" class="img-fluid">
                             North America
                         </a>
                     </li>
+                        
+                   
                     <li class="tm-tab-link-li">
                         <a href="#2a" data-toggle="tab" class="tm-tab-link">
                             <img src="/images/south-america.png" alt="Image" class="img-fluid">
@@ -260,47 +263,21 @@ http://www.templatemo.com/tm-511-journey
                     <!-- Tab 1 -->
                     <div class="tab-pane fade" id="1a">
                         <div class="tm-recommended-place-wrap">
-                            <div class="tm-recommended-place">
-                                <img src="/images/tm-img-06.jpg" alt="Image" class="img-fluid tm-recommended-img">
+                            <% obj.forEach((o,i)=>{ %>
+                                <div class="tm-recommended-place">
+                                <img src=<%=o.img_way%> alt="Image" class="img-fluid tm-recommended-img">
                                 <div class="tm-recommended-description-box">
-                                    <h3 class="tm-recommended-title">North Garden Resort</h3>
-                                    <p class="tm-text-highlight">One North</p>
-                                    <p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
+                                    <h3 class="tm-recommended-title"><%=o.title%></h3>
+                                    <p class="tm-text-highlight"><%=o.title2%></p>
+                                    <p class="tm-text-gray"><%=o.tables%></p>   
                                 </div>
                                 <a href="#" class="tm-recommended-price-box">
-                                    <p class="tm-recommended-price">$110</p>
+                                    <p class="tm-recommended-price"><%=o.price%></p>
                                     <p class="tm-recommended-price-link">Continue Reading</p>
                                 </a>                        
                             </div>
-
-                            <div class="tm-recommended-place">
-                                <img src="/images/tm-img-07.jpg" alt="Image" class="img-fluid tm-recommended-img">
-                                <div class="tm-recommended-description-box">
-                                    <h3 class="tm-recommended-title">Felis nec dignissim</h3>
-                                    <p class="tm-text-highlight">Two North</p>
-                                    <p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-                                </div>
-                                <div id="preload-hover-img"></div>
-                                <a href="#" class="tm-recommended-price-box">
-                                    <p class="tm-recommended-price">$120</p>
-                                    <p class="tm-recommended-price-link">Continue Reading</p>
-                                </a>
-                            </div>
-
-                            <div class="tm-recommended-place">
-                                <img src="/images/tm-img-05.jpg" alt="Image" class="img-fluid tm-recommended-img">
-                                <div class="tm-recommended-description-box">
-                                    <h3 class="tm-recommended-title">Sed fermentum justo</h3>
-                                    <p class="tm-text-highlight">Three North</p>
-                                    <p class="tm-text-gray">Sed egestas, odio nec bibendum mattis, quam odio hendrerit risus, eu varius eros lacus sit amet lectus. Donec blandit luctus dictum...</p>   
-                                </div>
-                                <a href="#" class="tm-recommended-price-box">
-                                    <p class="tm-recommended-price">$130</p>
-                                    <p class="tm-recommended-price-link">Continue Reading</p>
-                                </a>
-                            </div>
-
-                            <div class="tm-recommended-place">
+                                 <% })%>
+                             <div class="tm-recommended-place">
                                 <img src="/images/tm-img-04.jpg" alt="Image" class="img-fluid tm-recommended-img">
                                 <div class="tm-recommended-description-box">
                                     <h3 class="tm-recommended-title">Maecenas ultricies neque</h3>
@@ -311,7 +288,7 @@ http://www.templatemo.com/tm-511-journey
                                     <p class="tm-recommended-price">$140</p>
                                     <p class="tm-recommended-price-link">Continue Reading</p>
                                 </a>
-                            </div>    
+                            </div>      
                         </div>                        
 
                         <a href="#" class="text-uppercase btn-primary tm-btn mx-auto tm-d-table">Show More Places</a>

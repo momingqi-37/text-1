@@ -4,15 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/new2.css">
+    <title>景区景点</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/new1.css">
+    <script>       
+
+        function systemTime() {
+ 
+             //获取系统时间。 
+ 
+             var dateTime = new Date();
+ 
+             var year = dateTime.getFullYear();
+ 
+             var month = dateTime.getMonth()+1;
+ 
+             var day = dateTime.getDate();
+ 
+             var hh = dateTime.getHours();
+ 
+             var mm = dateTime.getMinutes();
+ 
+             var ss = dateTime.getSeconds();
+ 
+ 
+ 
+             //月、日、小时、分钟、秒是一位数字，在数字前补0。  
+ 
+             month = extra(month);
+ 
+             day = extra(day);
+ 
+             hh = extra(hh);
+ 
+             mm = extra(mm);
+ 
+             ss = extra(ss);
+ 
+ 
+ 
+             //将时间显示到ID为time的位置，时间格式形如：2011-01-11  11:11:11
+ 
+             document.getElementById("time").innerHTML = year + "-" + month + "-" + day + "&nbsp;" + hh + ":" + mm + ":" + ss;
+             //每隔1000ms执行方法systemTime()。 
+             setTimeout("systemTime()", 1000);
+         }
+         //补位函数。
+         function extra(x) {
+             //如果传入数字小于10，数字前补一位0。 
+             if (x < 10) {
+                 return "0" + x;
+             }
+             else {
+                 return x;
+             }
+         }
+     </script>
 </head>
-<body style="background: #4ad3b4;">
-    <div id="preloader-2" style="text-align: center;">
-        <span></span>
-        <span></span>
-        <div style="text-align: center;">
-            <h1 class="h1_">正在寻找你的网页...</h1></div>
+<body onload="systemTime()">
+    <div class="head_ti">
+        <ul>
+            <Li><a href="/new1">首页</a></Li>
+            <Li><a href="/new2">旅游图片</a></Li>
+            <Li><a href="/new4">旅游地点</a></Li>
+            <Li><a>用户</a></Li>
+        </ul>
+    </div>
+    <div>
+        <form action="/new4" method="POST" onsubmit="return check(this)">
+            <label>中华人民共和国</label>
+            <select name="shengname">
+                <option> </option>
+                </select>省
+            <select name="shiname">
+                <option> </option>
+            </select>市  
+        </form>
+        <form>
+
+        </form>
+        
     </div>
 </body>
 </html>

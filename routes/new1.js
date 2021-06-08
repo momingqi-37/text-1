@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 var express =require('express');
 var router =express.Router();
 var mysql =require('mysql');
@@ -10,9 +11,12 @@ var connection = mysql.createConnection({
 });
 
 router.get('/',(req,res,next)=>{
-    
-    connection.query()
-    res.render('1.html');
-})
+    var sql ="SELECT * FROM `tab_creat`INNER JOIN tab_text ON tab_creat.id =tab_text.user_id ";
+    connection.query(sql,(err,rows)=>{
+        if (err) throw err;
+        console.log(rows);
+        res.render('1.html',{obj:rows});
+    });
+});
 
 module.exports =router;

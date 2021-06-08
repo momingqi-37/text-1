@@ -40,7 +40,7 @@ router.post('/login', (req, res) => {
           res.redirect('/new5');
         }
         else {
-          res.render('1.html');
+          res.redirect('/new3');
         }
       }
     }

@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>旅游首页</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/new1.css">
+    <style>
+        .a-1 {
+            border: 1px solid #F00;
+            width: 334px;
+            height: 600px;
+            background: rgb(154, 206, 123)
+        }
+    </style>
 </head>
+
 <body background="/images/2.jpg">
     <div class="head_ti">
         <ul>
             <Li><a href="/new1">首页</a></Li>
-            <Li><a href="/new2">旅游图片</a></Li>
-            <Li><a href="/new4">旅游地点</a></Li>
-            <a href="/new5" style="text-decoration: none;">后台管理</a>
+            <Li><a href="/new4">旅游图片</a></Li>
+            <Li><a href="/new2">旅游地点</a></Li>
             <Li><a>用户</a></Li>
         </ul>
     </div>
-    
+
+
     <div>
+        当前时间：<span id="time"></span>
         <h1 class="title_">旅游记录中心</h1>
+        <div class="a-1">
+            <tr>A区文本旅客讨论区</tr>
+            
+            <from>
+                <% obj.forEach((o,i)=>{ %>
+                    <tr>
+                        <h3><%= o.name %></h3>
+                        <div class="col"><%= o.leave_word %></div>
+                        <p><%= o.time_now %></p>
+                    </tr>
+                    <% }) %>
+            </from>
+            <form>
+                <input type="text" name="text" placeholder="请输入你的留言(20字以内)" />
+                <input type="submit" />
+            </form>
+        </div>
         <ul>
             <li>
                 <a href="/new2" style="text-decoration: none;">缓存页面</a>
-           </li>
-           <li>
+            </li>
+            <li>
                 <a href="/new3" style="text-decoration: none;">国外旅游景推荐</a>
             </li>
             <li>
                 <a href="/new4" style="text-decoration: none;">国内旅游搜索</a>
             </li>
-           
-            </ul>
+
+        </ul>
     </div>
+    
     <form>
         <input type="button" value="更新" />
     </form>
-    
+
 </body>
+
 </html>

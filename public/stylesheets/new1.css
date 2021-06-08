@@ -37,3 +37,7 @@ body{
     /*鼠标选中*/
     background-color: rgb(28, 177, 85);
 }
+.col{
+    background-color: #fff;
+    border-radius: 4px;
+}
