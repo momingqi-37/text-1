@@ -4,85 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>景区景点</title>
+    <title>订单页面</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/new1.css">
-    <script>       
+    <link rel="stylesheet" type="text/css" href="/stylesheets/new5.css">
 
-        function systemTime() {
- 
-             //获取系统时间。 
- 
-             var dateTime = new Date();
- 
-             var year = dateTime.getFullYear();
- 
-             var month = dateTime.getMonth()+1;
- 
-             var day = dateTime.getDate();
- 
-             var hh = dateTime.getHours();
- 
-             var mm = dateTime.getMinutes();
- 
-             var ss = dateTime.getSeconds();
- 
- 
- 
-             //月、日、小时、分钟、秒是一位数字，在数字前补0。  
- 
-             month = extra(month);
- 
-             day = extra(day);
- 
-             hh = extra(hh);
- 
-             mm = extra(mm);
- 
-             ss = extra(ss);
- 
- 
- 
-             //将时间显示到ID为time的位置，时间格式形如：2011-01-11  11:11:11
- 
-             document.getElementById("time").innerHTML = year + "-" + month + "-" + day + "&nbsp;" + hh + ":" + mm + ":" + ss;
-             //每隔1000ms执行方法systemTime()。 
-             setTimeout("systemTime()", 1000);
-         }
-         //补位函数。
-         function extra(x) {
-             //如果传入数字小于10，数字前补一位0。 
-             if (x < 10) {
-                 return "0" + x;
-             }
-             else {
-                 return x;
-             }
-         }
-     </script>
+   
 </head>
-<body onload="systemTime()">
+<body>
     <div class="head_ti">
         <ul>
-            <Li><a href="/new1">首页</a></Li>
-            <Li><a href="/new2">旅游图片</a></Li>
-            <Li><a href="/new4">旅游地点</a></Li>
+            <Li><a href="/new2">订单管理</a></Li>
+            <Li><a href="/new5">后台管理</a></Li>
             <Li><a>用户</a></Li>
         </ul>
     </div>
     <div>
-        <form action="/new4" method="POST" onsubmit="return check(this)">
-            <label>中华人民共和国</label>
-            <select name="shengname">
-                <option> </option>
-                </select>省
-            <select name="shiname">
-                <option> </option>
-            </select>市  
-        </form>
-        <form>
-
-        </form>
-        
+        <h1>
+            用户订单
+        </h1>
     </div>
+    <table>
+        <form action="/new2/cha1" method="POST"/>
+        <input type="text" name="cha" placeholder="姓名" />
+        <input type="submit" />
+        </form>
+        <thead>
+            <tr>
+                <td colspan="9"></td>
+            </tr>
+            <tr>
+                <td>编号<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>姓名<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>目的地点<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>房间数<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>出游日期<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>归家日期<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>大人数<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>小孩<span class="upBtn"></span><span class="downBtn"></span></td>
+                <td>操作<span class="upBtn"></span><span class="downBtn"></span></td>
+            </tr>
+
+        </thead>
+        <tbody>
+            <% data.forEach((o,i)=>{ %>
+                <tr>
+                    <td>
+                        <%=o.id%>
+                    </td>
+                    <td>
+                        <%=o.name%>
+                    </td>
+                    <td>
+                        <%=o.destination%>
+                    </td>
+                    <td>
+                        <%=o.rooms%>
+                    </td>
+                    <td>
+                        <%=o.data_in%>
+                    </td>
+                    <td>
+                        <%=o.data_out%>
+                    </td>
+                    <td>
+                        <%=o.man%>
+                    </td>
+                    <td>
+                        <%=o.kid%>
+                    </td>
+                    <td>
+                        <input type="button" class="del" value="删除" data_id="<%=o.id%>" />
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <script>
+        Array.from(document.getElementsByClassName("del")).forEach(i => {
+            i.onclick = function () {
+                window.location.href = "/new2/deta/" + this.getAttribute('data_id');
+            };
+        })//修改传id
+       
+    </script>
+</body>
 </body>
 </html>

@@ -39,8 +39,11 @@ router.post('/login', (req, res) => {
         if (rows[0].type == '0') {
           res.redirect('/new5');
         }
-        else {
-          res.redirect('/new3');
+         else if(rows[0].type == '2'){
+          res.redirect('/new2');
+         }
+        else {console.log(rows);
+          res.render('3.html',{obj:rows});
         }
       }
     }

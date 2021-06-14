@@ -23,8 +23,6 @@ router.post('/', (req, res) => {
   //  req.session.password = req.body.password ;
   var repeaded = "select name from tab_creat where name = '" + req.body.name + "'"
   connection.query(repeaded, (err, rows1) => {
-    //判断用户名是否重复
-    // if(rows1==""){}
     let md5 = crypto.createHash("md5");
     let newPas = md5.update(req.body.password).digest("hex");//加密
     var mysqlparams = [

@@ -131,7 +131,7 @@ p:last-child { margin-bottom: 0; }
     background: rgba(0, 0, 0, 0.7);
 }
 .tm-banner-bg {
-    background: url(../img/banner.jpg) center top no-repeat;    
+    background: url(/images/banner.jpg) center top no-repeat;    
     min-height: 720px;
     position: relative;
 }
@@ -392,7 +392,7 @@ label { font-weight: 700; }
 
 .tm-recommended-price-box {    
     background-color: #69c6ba;
-    background-image: url(../img/button-curve.png);
+    background-image: url(/images/button-curve.png);
     background-repeat: no-repeat;
     background-size: auto 100%;
     font-weight: 400;
@@ -631,7 +631,7 @@ footer p { color: white; }
         top: -45px;
         left: 45px;
         z-index: 27;
-        background: url(../img/button-curve.png) 0 0 no-repeat;
+        background: url(/images/button-curve.png) 0 0 no-repeat;
         -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
         background-size: auto 100%;      
