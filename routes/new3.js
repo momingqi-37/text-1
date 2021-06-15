@@ -12,14 +12,14 @@ var connection = mysql.createConnection({
 });
 
 router.get('/', (req, res, next) => {
-    var sql2 = "select * from  "
-    connection.query(sql2,(err,rows)=>{
+    var sql2 = "select * from tab_creat where name =?"
+    connection.query(sql2,(err,[],rows)=>{
         if (err) throw err;
         console.log(rows);
         res.render('3.html',{obj:rows});
     })
     
-});
+});9
 router.post('/',(req,res,next)=>{
     var sql3 ="insert into tab_from(name,destination,data_in,data_out,rooms,man,kid) VALUES(?,?,?,?,?,?,?);"
     var ARR=[
@@ -34,7 +34,7 @@ router.post('/',(req,res,next)=>{
     connection.query(sql3,ARR,(err,rows)=>{
         if (err) throw err ;
         console.log(rows);
-    
+    res.json("发布成功");
      })
 })
 
