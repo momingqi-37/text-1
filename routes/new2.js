@@ -33,4 +33,15 @@ router.get('/deta/:id', (req, res) => {
         res.redirect('/new2');
     })
 });//删除
+router.post('/cha1',(req,res)=>{
+    var mys = "select * from tab_from where name = ?";
+    connection.query(mys,[req.body.cha],(err,results)=>{
+        if (err)
+        {return console.error(err.message)};
+        console.log(results);
+        res.render('2.html', {
+          data: results
+      });
+    })
+  });
 module.exports = router;

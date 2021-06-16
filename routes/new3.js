@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
         res.render('3.html',{obj:rows});
     })
     
-});9
+});
 router.post('/',(req,res,next)=>{
     var sql3 ="insert into tab_from(name,destination,data_in,data_out,rooms,man,kid) VALUES(?,?,?,?,?,?,?);"
     var ARR=[

@@ -42,15 +42,18 @@ router.post('/add', (req, res) => {
     mysql2 = [
         req.body.name1,
         newPas,
-        req.body.name2
+        req.body.name2,
+        req.body.phonenum,
+        req.body.mail
     ]
-    var sql = 'INSERT INTO tab_creat(name,possword,type) values(?,?,?)';
+    var sql = 'INSERT INTO tab_creat(name,possword,type,phonenum,mail) values(?,?,?,?,?)';
     connection.query(sql, mysql2, (error, results) => {
         if (error) throw error;
         console.log(results);
     })
     res.redirect('/new5');
 });
+//删除
 router.get('/detale/:id', (req, res) => {
     var dalete_ = "DELETE FROM tab_creat WHERE id =?"
     connection.query(dalete_, [req.params.id], (error, results, fields) => {
@@ -59,7 +62,7 @@ router.get('/detale/:id', (req, res) => {
         console.log('Deleted Row(s):', results.affectedRows);
         res.redirect('/new5');
     })
-});//删除
+});
 router.get('/update/:id', (req, res) => {
     var update_ = "SELECT * FROM tab_creat WHERE id = ?";
     connection.query(update_, [req.params.id], (error, results) => {
@@ -73,6 +76,7 @@ router.get('/update/:id', (req, res) => {
 );
 
 });
+//改
 router.post('/update',(req,res)=>{
     let md5 = crypto.createHash("md5");
     let newPas = md5.update(req.body.password).digest("hex");//加密
@@ -84,9 +88,10 @@ router.post('/update',(req,res)=>{
         res.redirect('/new5');
     });
 });
+//查
 router.post('/cha1',(req,res)=>{
-  var mys = "select * from tab_creat where name = ?";
-  connection.query(mys,[req.body.cha],(err,results)=>{
+  var mys = "select * from tab_creat where name like ?";
+  connection.query(mys,["%"+req.body.cha+"%"],(err,results)=>{
       if (err)
       {return console.error(err.message)};
       console.log(results);

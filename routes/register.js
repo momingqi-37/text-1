@@ -27,9 +27,11 @@ router.post('/', (req, res) => {
     let newPas = md5.update(req.body.password).digest("hex");//加密
     var mysqlparams = [
       req.body.uname,
-      newPas
+      newPas,
+      req.body.phonenum,
+      req.body.mail
     ];
-    var mysqlQuery = 'INSERT INTO tab_creat(name,possword,type) values(?,?,1)'
+    var mysqlQuery = 'INSERT INTO tab_creat(name,possword,type,phonenum,mail) values(?,?,1,?,?)'
     connection.query(mysqlQuery, mysqlparams, (err, rows) => {
       if (err) { console.log('[query]-:' + err) }
       else res.redirect('/');

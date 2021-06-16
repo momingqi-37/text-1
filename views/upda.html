@@ -9,22 +9,25 @@
 
 </head>
 
-<body>
+<body  background="/images/200.JPG">
     <form action="/new5/update" +data_id method="POST" style="text-align: center;">
         <div>
-            <h1>成员修改信息</h1>
+            <h1>成员信息修改</h1>
         </div>
         <div style="display: none;">
             <input type="text" name="id" value="<%=obj.id%>" />
         </div>
-
+        
         <div>名字</div>
         <input type="text" name="name1" value="<%=obj.name %>" placeholder="修改名" />
-        <div>密码（必改）</div>
-        <input type="password" name="password" value="<%=obj.possword %>" placeholder="修订密码" />
-        <div>身份</div>
-        <input type="text" name="type" value="<%=obj.type %>" placeholder="身份" />
+        <div style="display: none;">密码（必改）
+        <input type="password" name="password" value="<%=obj.possword %>" placeholder="修订密码" /></div>
+        <div>身份（1为用户，0为管理员，请不要给自己人挖坑！）</div>
+        <div>
+        <input type="text" name="type" value="<%=obj.type %>" placeholder="身份" /></div>
+        <div>
         <input type="submit" class="up">
+        </div>
     </form>
 </body>
 

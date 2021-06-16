@@ -45,6 +45,7 @@
             </tr>
 
         </thead>
+
         <tbody>
             <% data.forEach((o,i)=>{ %>
                 <tr>
@@ -74,6 +75,7 @@
                     </td>
                     <td>
                         <input type="button" class="del" value="删除" data_id="<%=o.id%>" />
+                        <input type="button" class="detail" value="用户详情" data_name="<%=o.name%>"/>
                     </td>
                 </tr>
                 <% }) %>
