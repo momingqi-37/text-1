@@ -87,7 +87,10 @@
                 window.location.href = "/new2/deta/" + this.getAttribute('data_id');
             };
         })//修改传id
-       
+        Array.from(document.getElementsByClassName("detail")).forEach(i => {
+            i.onclick = function () {
+                window.location.href = "/new2/detail/" + this.getAttribute('data_name');
+            }})
     </script>
 </body>
 </body>

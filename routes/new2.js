@@ -44,4 +44,18 @@ router.post('/cha1',(req,res)=>{
       });
     })
   });
+  router.get("/detail/:name",(req,res)=>{
+    var sql = 'SELECT * from tab_creat where name = ?';
+    connection.query(sql,[req.params.name], (error, results, fields)=> {
+
+        if (error) {
+            console.log('[query]-:' + error);
+        } else {
+            console.log(results);
+            res.render('5.html', {
+                data: results
+            });
+        }
+    });
+  })
 module.exports = router;
